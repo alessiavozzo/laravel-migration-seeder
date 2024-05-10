@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Guests\TrainController;
+use App\Http\Controllers\Guests\PageController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,3 +16,5 @@ use App\Http\Controllers\Guests\TrainController;
 */
 
 Route::get('/', [TrainController::class, 'index'])->name('home');
+Route::get('/trains', [PageController::class, 'index'])->name('trains');
+Route::get('/trains/{trainId}', [PageController::class, 'show'])->name('train');

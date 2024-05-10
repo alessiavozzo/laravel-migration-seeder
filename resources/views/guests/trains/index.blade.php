@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="container py-4">
-        <h1>Treni in partenza oggi:</h1>
+        <h1>Treni disponibili:</h1>
         <div class="row row-cols-1 gy-3">
 
-            @forelse ($today_trains as $train)
+            @forelse ($trains as $train)
                 <div class="col">
                     <a class="text-dark text-decoration-none" href="{{ route('train', ['trainId' => $train->id]) }}">
                         <div class="card">
