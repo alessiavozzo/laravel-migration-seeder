@@ -23,6 +23,10 @@ Create il modello Model relativo alla migrazione che avete predisposto al fine d
 - arrival_time DATETIME NOTNULL
 - train_code VARCHAR(20) NOTNULL
 - wagons_number TINYINT NULL
-- in_time TINYINT NULL
+- in_time TINYINT NOTNULL
 - cancelled TINYINT NOTNULL
 
+## steps
+- Modifico il file .env per consentire l'accesso al database
+- php artisan make:migration create_trains_table
+- php artisan migrate per migrare la table sul database (il db non esiste quindi mi chiederà anche conferma per creare il db)
