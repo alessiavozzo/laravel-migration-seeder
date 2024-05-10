@@ -86,3 +86,5 @@ $train->arrival_time = '2024-05-10 17:00:00'
 $train->train_code = 'zzz123' 
 $train->wagons_number = 7
 $train->save()
+
+- Creo il controller abbinato al mio modello Train: php artisan make:controller Guests/TrainController -m Train
