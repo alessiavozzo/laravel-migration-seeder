@@ -16,8 +16,8 @@ class TrainController extends Controller
         $today = now()->toDateString();
         //dd($today);
         $today_trains = Train::whereDate('departure_time', $today)->get();
-        dd($today_trains);
-        return view('welcome');
+        //dd($today_trains);
+        return view('guests.home', compact('today_trains'));
     }
 
     /**
