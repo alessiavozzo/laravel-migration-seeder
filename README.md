@@ -89,3 +89,20 @@ $train->wagons_number = 7
 $train->save()
 
 - Creo il controller abbinato al mio modello Train: php artisan make:controller Guests/TrainController -m Train
+
+- Test: aggiungere una nuova colonna alla table php artisan make:migration add_type_to_trains_table (tipo di treno)
+
+- Test: aggiungere più colonne (binario di partenza e di arrivo) php artisan make:migration update_trains_table --table=trains
+
+$train = new App\Models\Train()
+$train->company = 'Italo'
+$train->departure_station = 'Roma Tiburtina' 
+$train->arrival_station = 'Milano Rogoredo' 
+$train->departure_time = '2024-05-20 11:00:00'
+$train->arrival_time = '2024-05-20 16:00:00' 
+$train->arrival_platform = 'platform 9 3/4'
+$train->departure_platform = 'platform 9'
+$train->type = 'frecciarossa'
+$train->train_code = 'zzz4567' 
+$train->wagons_number = 8
+$train->save()

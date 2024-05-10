@@ -25,6 +25,24 @@
                             <div class="departure_time">{{ date('d-m-Y', strtotime($train->departure_time)) }}</div>
                             <div class="departure_time">{{ date('H:i', strtotime($train->departure_time)) }}</div>
                         </div>
+                        @if ($train->departure_platform != null || $train->arrival_platform != null)
+                            <div class="platform">
+                                <div class="departure-platform">
+                                    <strong>Binario di partenza:</strong>
+                                    {{ $train->departure_platform }}
+                                </div>
+                                <div class="arrival-platform">
+                                    <strong>Binario di arrivo</strong>
+                                    {{ $train->arrival_platform }}
+                                </div>
+                            </div>
+                        @endif
+                        @if ($train->type != null)
+                            <div class="type">
+                                <strong>Tipo di treno: </strong>
+                                {{ $train->type }}
+                            </div>
+                        @endif
                         <div class="wagons"><strong>Carrozze: </strong>{{ $train->wagons_number }}</div>
                         <div class="code text-end"><strong>Codice: </strong>{{ $train->train_code }}</div>
 
