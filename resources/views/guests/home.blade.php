@@ -35,6 +35,10 @@
             @empty
                 <p>No trains</p>
             @endforelse
+
+            <div class="controls">
+                {{ $today_trains->links() }}
+            </div>
         </div>
     </div>
 @endsection
