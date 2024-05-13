@@ -15,6 +15,12 @@ Ogni treno dovrà avere almeno:
 Inserite inizialmente i dati tramite PhpMyAdmin o artisan tinker per chi ne ha capito l'utilizzo.
 Create il modello Model relativo alla migrazione che avete predisposto al fine di mappare la tabelle del db ed un Controller per mostrare nella home page tutti i treni che sono in partenza dalla data odierna.
 
+# PARTE 2
+Aggiungiamo un seeder per la classe Train usando un array di dati fittizzi fatta a mano.
+## BONUS: 
+Implementare il seeder tramite FakerPHP
+
+
 # table: trains
 - id BIGINT AI PK UNIQUE NOTNULL
 - company VARCHAR(50) NULL
@@ -106,3 +112,7 @@ $train->type = 'frecciarossa'
 $train->train_code = 'zzz4567' 
 $train->wagons_number = 8
 $train->save()
+
+- Genero una nuova classe di seeder con php artisan make:seeder TrainsTableSeeder
+- Creo file db.php in config con all'interno dati dei treni (uno l'ho compilato a mano, il resto li ha generati chatgpt basandosi su quello di partenza fatto da me)
+- Riempio il database: php artisan db:seed --class=TrainsTableSeeder
