@@ -39,7 +39,7 @@ class TrainsTableSeeder extends Seeder
             $train->company = $faker->randomElement(['Italo', 'Trenitalia', 'Eurostar']);
             $train->departure_station = $faker->city();
             $train->arrival_station = $faker->city();
-            if($train->departure_station == $train->arrival_station){
+            while($train->departure_station == $train->arrival_station){
                 $train->arrival_station = $faker->city();
             }
             $train->departure_time = $faker->dateTimeBetween(now(), '+2 days');
