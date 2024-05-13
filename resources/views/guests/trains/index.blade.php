@@ -24,6 +24,8 @@
                                 <div class="times">
                                     <div class="departure_time">{{ date('d-m-Y', strtotime($train->departure_time)) }}</div>
                                     <div class="departure_time">{{ date('H:i', strtotime($train->departure_time)) }}</div>
+                                    <div class="arrival_time">{{ date('d-m-Y', strtotime($train->arrival_time)) }}</div>
+                                    <div class="arrival_time">{{ date('H:i', strtotime($train->arrival_time)) }}</div>
                                 </div>
 
                                 @if ($train->departure_platform != null || $train->arrival_platform != null)

@@ -39,8 +39,14 @@ class TrainsTableSeeder extends Seeder
             $train->company = $faker->randomElement(['Italo', 'Trenitalia', 'Eurostar']);
             $train->departure_station = $faker->city();
             $train->arrival_station = $faker->city();
-            $train->departure_time = $faker->dateTimeBetween('-1 day', '+2 week');
-            $train->arrival_time = $faker->dateTimeBetween('-1 day', '+2 week');
+            if($train->departure_station == $train->arrival_station){
+                $train->arrival_station = $faker->city();
+            }
+            $train->departure_time = $faker->dateTimeBetween(now(), '+2 days');
+            $train->arrival_time = $faker->dateTimeBetween($train->departure_time, '+2 days');
+            if($train->arrival_time <= $train->departure_time){
+                $train->arrival_time = $faker->dateTimeBetween($train->departure_time, '+2 days');
+            }
             $train->departure_platform = 'platform' . ' ' . $faker->numberBetween(1,15);
             $train->arrival_platform = 'platform' . ' ' . $faker->numberBetween(1,15);
             $train->type = $faker->randomElement(['Frecciarossa', 'Frecciargento', 'Frecciabianca', 'Regionale veloce']);

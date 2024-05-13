@@ -24,6 +24,8 @@
                                 <div class="times">
                                     <div class="departure_time">{{ date('d-m-Y', strtotime($train->departure_time)) }}</div>
                                     <div class="departure_time">{{ date('H:i', strtotime($train->departure_time)) }}</div>
+                                    <div class="arrival_time">{{ date('d-m-Y', strtotime($train->arrival_time)) }}</div>
+                                    <div class="arrival_time">{{ date('H:i', strtotime($train->arrival_time)) }}</div>
                                 </div>
                                 <div class="wagons"><strong>Carrozze: </strong>{{ $train->wagons_number }}</div>
                                 <div class="code text-end"><strong>Codice: </strong>{{ $train->train_code }}</div>
